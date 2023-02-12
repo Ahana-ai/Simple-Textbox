@@ -19,10 +19,6 @@ export default function Details(props) {
     console.log(text);
   };
 
-  const clearBox = () => {
-    setText("");
-  };
-
   return (
     <>
       <div className="container">
@@ -57,13 +53,12 @@ export default function Details(props) {
 
           <button
             className="btn btn-primary m-2"
-            onClick={clearBox}
+            onClick={() => setText('')}
             value={text}
           >
             Clear Text Box
           </button>
 
-          <button>Hi</button>
         </form>
 
         <h2>Text Summary</h2>
