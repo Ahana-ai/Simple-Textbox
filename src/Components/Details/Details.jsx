@@ -62,6 +62,8 @@ export default function Details(props) {
           >
             Clear Text Box
           </button>
+
+          <button>Hi</button>
         </form>
 
         <h2>Text Summary</h2>
