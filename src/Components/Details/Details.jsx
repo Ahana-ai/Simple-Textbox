@@ -3,31 +3,66 @@ import PropTypes from "prop-types";
 
 export default function Details(props) {
   const [text, setText] = useState("");
+  const [arr, setarr] = useState([]);
+  const [charArr, setCharArr] = useState([]);
+
+  let myChar;
 
   const toUpperCase = () => {
-    setText(text.toUpperCase());
-    console.log(text);
+    let newText = text.toUpperCase();
+    setText(newText);
+    console.log(newText);
   };
 
   const handleEvent = (event) => {
     setText(event.target.value);
-    console.log(event.target.value);
+
+    //Removing extra whitespaces from the words
+    setarr(text.split(' '));
+    console.log(arr);
+    setarr((previous) => {
+      return previous.filter((currvalue) => {
+        return currvalue !== '';
+      });
+    });
+
+    //Removing extra whitespaces to calculate characters
+    setCharArr(text.split(''));
+    setCharArr((previous) => {
+      return previous.filter((currvalue) => {
+        return currvalue !== ' ';
+      });
+    });
+    console.log('=====>>>>', charArr);
+    // console.log(event.target.value);
   };
 
+  const removeSpace = () => {
+    setText(charArr.join(''));
+    console.log(myChar);
+  }
+
   const toLowerCase = () => {
-    setText(text.toLowerCase());
-    console.log(text);
+    let newText = text.toLowerCase();
+    setText(newText);
+    console.log(newText);
   };
 
   return (
     <>
       <div className="container">
         <h1>{props.title}</h1>
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <div className="form-group">
             <label htmlFor="textbox">Enter Some Text</label>
             <textarea
-              className={`form-control bg-${props.theme === 'light' ? 'dark' : 'light'}`}
+              className={`form-control bg-${
+                props.theme === "light" ? "dark" : "light"
+              } text-${props.theme === "dark" ? "dark" : "light"}`}
               value={text}
               onChange={handleEvent}
               id="text"
@@ -37,7 +72,6 @@ export default function Details(props) {
             type="button"
             className="btn btn-primary m-2"
             onClick={toUpperCase}
-            value={text}
           >
             Change to UpperCase
           </button>
@@ -46,24 +80,30 @@ export default function Details(props) {
             type="button"
             className="btn btn-primary m-2"
             onClick={toLowerCase}
-            value={text}
           >
             Change to LowerCase
           </button>
 
           <button
             className="btn btn-primary m-2"
-            onClick={() => setText('')}
-            value={text}
+            onClick={() => {
+              setText("");
+              setCharArr("");
+              setarr("");
+            }}
           >
             Clear Text Box
           </button>
 
+          <button className="btn btn-primary m-2" onClick={removeSpace}>
+            Remove Spaces
+          </button>
         </form>
 
         <h2>Text Summary</h2>
         <div>
-          {text.trim().length} characters and {text.trim().split(" ").length} words
+          {charArr.length} characters and {arr.length}{" "}
+          words
         </div>
       </div>
     </>

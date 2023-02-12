@@ -28,7 +28,7 @@ export default function Routing() {
         <Header mode={mode} toggleMode={toggleMode} />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/Details" element={<Details title="Textbox" />} />
+          <Route path="/Details" element={<Details title="Textbox" theme={mode}/>} />
         </Routes>
         <Footer />
       </Router>
