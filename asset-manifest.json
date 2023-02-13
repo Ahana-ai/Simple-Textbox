@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Simple-Textbox/static/css/main.f00e28ab.css",
+    "main.js": "/Simple-Textbox/static/js/main.f10e556b.js",
+    "static/js/787.e5788219.chunk.js": "/Simple-Textbox/static/js/787.e5788219.chunk.js",
+    "static/media/logo.svg": "/Simple-Textbox/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Simple-Textbox/index.html",
+    "main.f00e28ab.css.map": "/Simple-Textbox/static/css/main.f00e28ab.css.map",
+    "main.f10e556b.js.map": "/Simple-Textbox/static/js/main.f10e556b.js.map",
+    "787.e5788219.chunk.js.map": "/Simple-Textbox/static/js/787.e5788219.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f00e28ab.css",
+    "static/js/main.f10e556b.js"
+  ]
+}
