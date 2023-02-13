@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default function Header(props) {
   return (
@@ -7,9 +7,9 @@ export default function Header(props) {
       <nav
         className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
       >
-        <Link className="navbar-brand" href="#">
+        <a className="navbar-brand" href="#">
           Navbar
-        </Link>
+        </a>
         <button
           className="navbar-toggler"
           type="button"
@@ -25,17 +25,17 @@ export default function Header(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <Link className="nav-link" to="">
+              <a className="nav-link" href='#'>
                 Home
-              </Link>
+              </a>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="">
+            {/* <li className="nav-item">
+              <a className="nav-link" href='#'>
                 Contact
-              </Link>
+              </a>
             </li>
             <li className="nav-item dropdown">
-              <Link
+              <a
                 className="nav-link dropdown-toggle"
                 href="#"
                 role="button"
@@ -43,20 +43,20 @@ export default function Header(props) {
                 aria-expanded="false"
               >
                 Dropdown
-              </Link>
+              </a>
               <div className="dropdown-menu">
-                <Link className="dropdown-item" to="/">
+                <a className="dropdown-item" href='#'>
                   Action
-                </Link>
-                <Link className="dropdown-item" to="">
+                </a>
+                <a className="dropdown-item" href='#'>
                   Another action
-                </Link>
+                </a>
                 <div className="dropdown-divider"></div>
-                <Link className="dropdown-item" to="">
+                <a className="dropdown-item" href='#'>
                   Something else here
-                </Link>
+                </a>
               </div>
-            </li>
+            </li> */}
           </ul>
           {/* <form className="form-inline my-2 my-lg-0">
             <input

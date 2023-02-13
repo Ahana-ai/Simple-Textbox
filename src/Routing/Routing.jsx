@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "../Components/Home/Home";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Home from "../Components/Home/Home";
 import Header from "../Share_module/Header/Header";
 import Footer from "../Share_module/Footer/Footer";
 import Details from "../Components/Details/Details";
@@ -24,14 +24,15 @@ export default function Routing() {
 
   return (
     <div>
-      <Router>
+      {/* <Router> */}
         <Header mode={mode} toggleMode={toggleMode} />
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Details" element={<Details title="Textbox" theme={mode}/>} />
-        </Routes>
+        </Routes> */}
+        <Details title="Textbox" theme={mode}/>
         <Footer />
-      </Router>
+      {/* </Router> */}
     </div>
   );
 }

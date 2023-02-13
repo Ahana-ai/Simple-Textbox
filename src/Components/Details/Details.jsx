@@ -6,8 +6,6 @@ export default function Details(props) {
   const [arr, setarr] = useState([]);
   const [charArr, setCharArr] = useState([]);
 
-  let myChar;
-
   const toUpperCase = () => {
     let newText = text.toUpperCase();
     setText(newText);
@@ -18,29 +16,28 @@ export default function Details(props) {
     setText(event.target.value);
 
     //Removing extra whitespaces from the words
-    setarr(text.split(' '));
-    console.log(arr);
+    setarr(text.split(" "));
+    // console.log(arr);
     setarr((previous) => {
       return previous.filter((currvalue) => {
-        return currvalue !== '';
+        return currvalue !== "";
       });
     });
 
     //Removing extra whitespaces to calculate characters
-    setCharArr(text.split(''));
+    setCharArr(text.split(""));
     setCharArr((previous) => {
       return previous.filter((currvalue) => {
-        return currvalue !== ' ';
+        return currvalue !== " ";
       });
     });
-    console.log('=====>>>>', charArr);
-    // console.log(event.target.value);
+    // console.log("=====>>>>", charArr);
   };
 
   const removeSpace = () => {
-    setText(charArr.join(''));
-    console.log(myChar);
-  }
+    console.log(arr);
+    setText(arr.join(" "));
+  };
 
   const toLowerCase = () => {
     let newText = text.toLowerCase();
@@ -96,14 +93,15 @@ export default function Details(props) {
           </button>
 
           <button className="btn btn-primary m-2" onClick={removeSpace}>
-            Remove Spaces
+            Remove Extra Spaces
           </button>
         </form>
 
         <h2>Text Summary</h2>
         <div>
-          {charArr.length} characters and {arr.length}{" "}
-          words
+          {charArr.length} characters and {arr.length} words
+          <h2>Preview</h2>
+          <p>{text}</p>
         </div>
       </div>
     </>
